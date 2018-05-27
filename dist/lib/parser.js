@@ -15,7 +15,7 @@ var Parser = exports.Parser = function () {
         this.type;
         this.input;
         this.output;
-        this.morse = ['-', '.', '/'];
+        this.morse = ['-', '.', '/', ' '];
         this.code = {
             "0": "-----",
             "1": ".----",
@@ -79,7 +79,7 @@ var Parser = exports.Parser = function () {
                     var char = _step.value;
 
                     if (this.morse.indexOf(char) == -1) {
-                        return { "type": "normal" };
+                        return 'text';
                     }
                 }
             } catch (err) {
@@ -97,7 +97,7 @@ var Parser = exports.Parser = function () {
                 }
             }
 
-            return { "type": "morse" };
+            return 'morse';
         }
     }, {
         key: 'morseToText',

@@ -3,7 +3,7 @@ export class Parser {
         this.type;
         this.input;
         this.output;
-        this.morse = ['-','.','/'];
+        this.morse = ['-','.','/',' '];
         this.code = {
             "0": "-----",
             "1": ".----",
@@ -58,10 +58,10 @@ export class Parser {
         var split = input.split('');
         for(let char of split){
             if(this.morse.indexOf(char) == -1){
-                return {"type":"normal"}
+                return 'text';
             }
         }
-        return {"type":"morse"}
+        return 'morse';
     }
 
     morseToText(input){

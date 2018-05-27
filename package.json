@@ -1,14 +1,19 @@
 {
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0"
+    "babel-preset-env": "^1.7.0",
+    "babelify": "^8.0.0"
   },
   "name": "morse-translater",
   "version": "1.0.0",
   "description": "Morse translater with auto detection",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "express": "latest",
+    "uniq": "^1.0.1"
+  },
   "scripts": {
+    "start": "./node_modules/.bin/babel  ./src --experimental --source-maps-inline -d ./dist && node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
